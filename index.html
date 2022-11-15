@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .app {
+        background-color: blue;
+        min-height: 800px;
+        border: 10px solid black;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    form {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="app"><h1>Temperature App</h1>
+<form onsubmit="conditionCheck(); return false">
+    <label for="temp">Temperature:</label>
+    <input type="number" id="temp">
+
+    <input type="submit" value="Check">
+</form>
+
+<p id="result"></p>
+</div>
+
+<script>
+    function conditionCheck() {
+        let temp= +document.querySelector("#temp").value;
+        if (temp > 30) {
+            document.querySelector("#result")
+            .innerHTML = "It's too HOT!";
+        }
+
+        else if (temp > 25) {
+            document.querySelector("#result")
+            .innerHTML = "It's PLEASANT outside!";
+        }
+
+        else if  (temp > 20) {
+            doument.querySelector("#result")
+            .innerHTML = "Keep jacket with you!";
+        }
+
+        else if (temp > 10) {
+            document.querySelector("#result")
+            .innerHTML = "Don't forget to wear jacket and cap when going out!";
+        }
+
+        else {
+            document.querySelector("#result")
+            .innerHTML = "Wear two jackets and keep from cold!";
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
